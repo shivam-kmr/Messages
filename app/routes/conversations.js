@@ -5,20 +5,6 @@ module.exports = function (app, db) {
   validataion: NA
   */
   app.get("/conversations", (req, res) => {
-    // const col = db.collection("Conversations");
-    // db.collection("Conversations")
-    //   .find({})
-    //   .toArray((err, item) => {
-    //     if (err) {
-    //       console.log(err);
-    //       res.status(500).send({
-    //         error: "An error Occured",
-    //         err,
-    //       });
-    //     } else {
-    //       res.send(item);
-    //     }
-    //   });
     var mysort = { time: -1 };
     db.collection("Messages")
       .aggregate([
@@ -34,7 +20,7 @@ module.exports = function (app, db) {
       .sort(mysort)
       .toArray((err, item) => {
         if (err) {
-          console.log(err);
+          res.header("Access-Control-Allow-Origin", "*");
           res.status(500).send({
             error: "An error Occured",
             err,
