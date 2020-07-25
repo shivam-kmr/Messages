@@ -19,8 +19,8 @@ module.exports = function (app, db) {
       ])
       .sort(mysort)
       .toArray((err, item) => {
+        res.header("Access-Control-Allow-Origin", "*");
         if (err) {
-          res.header("Access-Control-Allow-Origin", "*");
           res.status(500).send({
             error: "An error Occured",
             err,
