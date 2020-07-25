@@ -8,7 +8,6 @@ const app = express();
 const port = 8081;
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
 MongoClient.connect(db.url, function (err, client) {
   if (err) throw err;
   var database = client.db('MessagesDB');

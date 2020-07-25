@@ -8,6 +8,7 @@ module.exports = function (app, db) {
     db.collection("Contacts")
       .find({})
       .toArray((err, item) => {
+        res. header("Access-Control-Allow-Origin", "*");
         if (err) {
           console.log(err);
           res.status(500).send({
@@ -27,6 +28,7 @@ module.exports = function (app, db) {
     const id = req.params.id;
     const detail = { _id: new ObjectId(id) };
     db.collection("Contacts").findOne(detail, (err, item) => {
+      res. header("Access-Control-Allow-Origin", "*");
       if (err) {
         res.status(500).send({
           error: "An error Occured",
@@ -59,6 +61,7 @@ module.exports = function (app, db) {
     };
     const detail = { mobile: req.body.mobile };
     db.collection("Contacts").findOne(detail, (err, item) => {
+      res. header("Access-Control-Allow-Origin", "*");
       console.log(item);
       if (err) {
         res.status(500).send({
@@ -76,6 +79,7 @@ module.exports = function (app, db) {
       } else {
         // everything looks good here. Insert the contact details.
         db.collection("Contacts").insertOne(contactDetails, (err, result) => {
+          res. header("Access-Control-Allow-Origin", "*");
           if (err) {
             res.status(500).send({
               error: "An error Occured" + res,
