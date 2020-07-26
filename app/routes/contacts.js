@@ -52,7 +52,7 @@ module.exports = function (app, db) {
   app.post("/contacts", (req, res) => {
     var date = new Date();
     var timeStamp = date.getTime();
-    console.log(request)
+    console.log(req)
     const contactDetails = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
