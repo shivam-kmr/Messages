@@ -39,7 +39,7 @@ module.exports = function (app, db) {
     const detail = { userId: new ObjectId(id) };
     const userId = { _id: new ObjectId(id) };
     db.collection("Messages").find(detail).toArray((err, item) => {
-      res. header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Origin", "*");
       if (err) {
         res.status(500).send({
           error: "An error Occured",

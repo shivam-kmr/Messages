@@ -10,7 +10,7 @@ module.exports = function (app, db) {
       time: timeStamp,
     };
     db.collection("Messages").insertOne(messegeToBeSent, (err, result) => {
-      res. header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Origin", "*");
       if (err) {
         console.log(err);
         res.send({

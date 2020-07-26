@@ -79,7 +79,7 @@ module.exports = function (app, db) {
       } else {
         // everything looks good here. Insert the contact details.
         db.collection("Contacts").insertOne(contactDetails, (err, result) => {
-          res. header("Access-Control-Allow-Origin", "*");
+          res.header("Access-Control-Allow-Origin", "*");
           if (err) {
             res.status(500).send({
               error: "An error Occured" + res,
