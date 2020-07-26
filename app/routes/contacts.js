@@ -64,7 +64,7 @@ module.exports = function (app, db) {
     };
     const detail = { mobile: req.body.mobile };
     db.collection("Contacts").findOne(detail, (err, item) => {
-      res. header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Origin", "*");
       console.log(item);
       if (err) {
         res.status(500).send({
