@@ -7,8 +7,7 @@ const app = express();
 
 const port = 8081;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 MongoClient.connect(db.url, function (err, client) {
   if (err) throw err;

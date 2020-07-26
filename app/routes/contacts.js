@@ -1,3 +1,5 @@
+const { request } = require("express");
+
 var ObjectId = require("mongodb").ObjectID;
 module.exports = function (app, db) {
 /* 
@@ -50,6 +52,7 @@ module.exports = function (app, db) {
   app.post("/contacts", (req, res) => {
     var date = new Date();
     var timeStamp = date.getTime();
+    console.log(request.body)
     const contactDetails = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
